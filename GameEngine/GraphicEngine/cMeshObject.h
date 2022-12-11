@@ -34,5 +34,11 @@ public:
 	Vector3		getVECPosition();
 	void		setPosition(glm::vec3 pos);
 	void		setPosition(Vector3 pos);
+
+	unsigned int getID(void) { return this->m_myID; }
+
+	unsigned int m_myID;
+	static unsigned int nextID;
+	static const unsigned int STARTING_ID = 1;
 };
 

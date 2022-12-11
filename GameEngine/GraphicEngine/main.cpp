@@ -47,8 +47,11 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 	const float MOVE_SPEED = 1.0f;
 	if (key == GLFW_KEY_A)     // Left
 	{
-		if (g_ProjectManager->m_selectedScene->m_name == "The Scene")
-			g_ProjectManager->m_selectedScene->m_mMeshes.find("Ball1")->second->m_position.x += MOVE_SPEED;
+		if (g_ProjectManager->m_selectedScene->m_name == "The Scene") {
+			//g_ProjectManager->m_selectedScene->m_mMeshes.find("Ball1")->second->m_position.x += MOVE_SPEED;
+			std::string offsetx = "offsetx = " + std::to_string(MOVE_SPEED);
+			pBrain->RunScriptImmediately(offsetx);
+		}
 		else {
 			g_cameraEye->x += MOVE_SPEED;
 			g_cameraTarget->x += MOVE_SPEED;

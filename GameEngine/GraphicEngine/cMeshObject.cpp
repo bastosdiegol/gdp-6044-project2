@@ -9,6 +9,10 @@
 #define DEBUG_PRINT(x)
 #endif
 
+
+//static 
+unsigned int cMeshObject::nextID = cMeshObject::STARTING_ID;
+
 cMeshObject::cMeshObject(cModel* parent) {
 	DEBUG_PRINT("cMeshObject::cMeshObject(%s)\n", parent->meshName.c_str());
 	this->m_parentModel = parent;
@@ -20,6 +24,8 @@ cMeshObject::cMeshObject(cModel* parent) {
 	this->m_isWireframe = false;
 	this->m_bDoNotLight = false;
 	this->m_bIsVisible = true;
+	this->m_myID = cMeshObject::nextID;
+	cMeshObject::nextID += 1;
 }
 
 cMeshObject::~cMeshObject() {
