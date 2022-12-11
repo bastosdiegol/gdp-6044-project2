@@ -1,0 +1,9 @@
+<soundlibrary>
+	<sound title="Darkness" path="./sounds/music/Darkness.ogg" format="ogg" type="music" frequency="1" volume="1" balance="0" lenght="12000" position="0" />
+	<sound title="Drips" 	path="./sounds/music/Drips.ogg"    format="ogg" type="music" frequency="1" volume="1" balance="0" lenght="20000" position="0" />
+	<sound title="Fire" 	path="./sounds/music/Fire.ogg" 	   format="ogg" type="music" frequency="1" volume="1" balance="0" lenght="16000" position="0" />
+	<sound title="Wind" 	path="./sounds/music/Wind.ogg" 	   format="ogg" type="music" frequency="1" volume="1" balance="0" lenght="5000"  position="0" />
+	<sound title="Devil" 	path="./sounds/music/Devil.ogg"    format="ogg" type="music" frequency="1" volume="1" balance="0" lenght="20000" position="0" />
+	<sound title="Starlight" path="./sounds/music/Starlight.ogg" format="ogg" type="music" frequency="1" volume="1" balance="0" lenght="16000" position="0" />
+	<sound title="Resonance" path="./sounds/music/Resonance.ogg" format="ogg" type="music" frequency="1" volume="1" balance="0" lenght="5000"  position="0" />
+</soundlibrary>

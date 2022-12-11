@@ -1,0 +1,771 @@
+<?xml version="1.0"?>
+<graphicsLibrary>
+	<scene title="The Scene" camEyeX="0" camEyeY="200" camEyeZ="-2" camTarX="0" camTarY="175" camTarZ="0">
+		<model path="assets/room/SM_Env_Tiles_09.ply" title="Tile">
+			<mesh id="Tile 01">
+				<position x="0" y="0" z="0" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.926470578" g="0.779004693" b="0.71756053" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 02">
+				<position x="-15" y="0" z="0" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925999999" g="0.778999984" b="0.717999995" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 03">
+				<position x="0" y="0" z="-15" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.926470578" g="0.779004693" b="0.71756053" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 04">
+				<position x="-15" y="0" z="-15" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925999999" g="0.778999984" b="0.717999995" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 05">
+				<position x="15" y="0" z="0" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.926470578" g="0.779004693" b="0.71756053" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 06">
+				<position x="-30" y="0" z="0" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925999999" g="0.778999984" b="0.717999995" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 07">
+				<position x="15" y="0" z="-15" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.926470578" g="0.779004693" b="0.71756053" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 08">
+				<position x="-30" y="0" z="-15" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925999999" g="0.778999984" b="0.717999995" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 09">
+				<position x="0" y="0" z="15" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.926470578" g="0.779004693" b="0.71756053" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 10">
+				<position x="-15" y="0" z="15" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925999999" g="0.778999984" b="0.717999995" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 11">
+				<position x="15" y="0" z="15" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.926470578" g="0.779004693" b="0.71756053" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 12">
+				<position x="-30" y="0" z="15" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925999999" g="0.778999984" b="0.717999995" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 13">
+				<position x="0" y="0" z="-30" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.926470578" g="0.779004693" b="0.71756053" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 14">
+				<position x="-15" y="0" z="-30" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925999999" g="0.778999984" b="0.717999995" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 15">
+				<position x="15" y="0" z="-30" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.926470578" g="0.779004693" b="0.71756053" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 16">
+				<position x="-30" y="0" z="-30" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925999999" g="0.778999984" b="0.717999995" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 17">
+				<position x="0" y="0" z="30" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.926470578" g="0.779004693" b="0.71756053" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 18">
+				<position x="-15" y="0" z="30" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925999999" g="0.778999984" b="0.717999995" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 19">
+				<position x="15" y="0" z="30" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.926470578" g="0.779004693" b="0.71756053" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 20">
+				<position x="-30" y="0" z="30" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925999999" g="0.778999984" b="0.717999995" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 21">
+				<position x="0" y="0" z="45" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.926470578" g="0.779004693" b="0.71756053" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 22">
+				<position x="-15" y="0" z="45" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925999999" g="0.778999984" b="0.717999995" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 23">
+				<position x="15" y="0" z="45" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.926470578" g="0.779004693" b="0.71756053" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Tile 24">
+				<position x="-30" y="0" z="45" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925999999" g="0.778999984" b="0.717999995" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/room/SM_Env_Wall_Window_01.ply" title="Window Wall">
+			<mesh id="Window Wall">
+				<position x="15" y="0" z="59.5" />
+				<rotate x="0" y="3.1500001" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/room/SM_Env_Wall_01.ply" title="Wall T1">
+			<mesh id="Wall T1 01">
+				<position x="-29.5" y="0" z="-0.150000006" />
+				<rotate x="0" y="1.54999995" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T1 02">
+				<position x="29.6000004" y="0" z="-15.3000002" />
+				<rotate x="0" y="-1.54999995" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T1 03">
+				<position x="0.200000003" y="0" z="59.5" />
+				<rotate x="0" y="3.1500001" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T1 05">
+				<position x="15" y="0" z="-30" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T1 06">
+				<position x="-29.3999996" y="0" z="-15.3000002" />
+				<rotate x="0" y="1.54999995" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T1 07">
+				<position x="-29.7999992" y="0" z="39.0999985" />
+				<rotate x="0" y="1.54999995" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T1 08">
+				<position x="29.7999992" y="0" z="24.2999992" />
+				<rotate x="0" y="-1.54999995" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/room/SM_Env_Wall_06.ply" title="Wall T6">
+			<mesh id="Wall T6 01">
+				<position x="-29.6000004" y="0" z="24.1000004" />
+				<rotate x="0" y="1.54999995" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T6 02">
+				<position x="30" y="0" z="9.30000019" />
+				<rotate x="0" y="-1.54999995" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T6 03">
+				<position x="30" y="0" z="59.5" />
+				<rotate x="0" y="3.1500001" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T6 04">
+				<position x="-14.8000002" y="0" z="59.5" />
+				<rotate x="0" y="3.1500001" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T6 05">
+				<position x="-30" y="0" z="-30" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T6 06">
+				<position x="29" y="0" z="-30.1000004" />
+				<rotate x="0" y="-1.54999995" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T6 07">
+				<position x="-29.6000004" y="0" z="54.1000023" />
+				<rotate x="0" y="1.54999995" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall T6 08">
+				<position x="30" y="0" z="39.2999992" />
+				<rotate x="0" y="-1.54999995" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/room/SM_Env_Wall_Alcove_01.ply" title="Wall Alcove">
+			<mesh id="Wall Alcove 01">
+				<position x="-33" y="0" z="4.5" />
+				<rotate x="0" y="1.54999995" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="4.3499999" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall Alcove 02">
+				<position x="33.7000008" y="0" z="4.5" />
+				<rotate x="0" y="-1.54999995" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="4.3499999" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/room/SM_Env_Wall_Pillar_Large_01.ply" title="Wall Pillar">
+			<mesh id="Wall Pillar 01">
+				<position x="29.5" y="0" z="58" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Wall Pillar 02">
+				<position x="-29.5" y="0" z="58" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/room/SM_Env_Wall_DoorFrame_Double_02.ply" title="Door">
+			<mesh id="Door">
+				<position x="-14.6999998" y="0" z="-30" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="5.92999983" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/room/SM_Env_Tiles_09.ply" title="Roof">
+			<mesh id="Roof 01">
+				<position x="-37" y="14.6999998" z="7" />
+				<rotate x="3.1500001" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925490201" g="0.78039217" b="0.717647076" a="1" />
+				<scale value="7.5" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="false" />
+			</mesh>
+			<mesh id="Roof 02">
+				<position x="0" y="14.6999998" z="7" />
+				<rotate x="3.1500001" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925490201" g="0.78039217" b="0.717647076" a="1" />
+				<scale value="7.5" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="false" />
+			</mesh>
+			<mesh id="Roof 03">
+				<position x="-37" y="14.6999998" z="44" />
+				<rotate x="3.1500001" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925490201" g="0.78039217" b="0.717647076" a="1" />
+				<scale value="7.5" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="false" />
+			</mesh>
+			<mesh id="Roof 04">
+				<position x="0" y="14.6999998" z="44" />
+				<rotate x="3.1500001" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925490201" g="0.78039217" b="0.717647076" a="1" />
+				<scale value="7.5" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="false" />
+			</mesh>
+			<mesh id="Roof 05">
+				<position x="-37" y="14.6999998" z="81" />
+				<rotate x="3.1500001" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925490201" g="0.78039217" b="0.717647076" a="1" />
+				<scale value="7.5" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="false" />
+			</mesh>
+			<mesh id="Roof 06">
+				<position x="0" y="14.6999998" z="81" />
+				<rotate x="3.1500001" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.925490201" g="0.78039217" b="0.717647076" a="1" />
+				<scale value="7.5" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="false" />
+			</mesh>
+		</model>
+		<model path="assets/dragon/SM_Env_Bone_Skull_01.ply" title="Dragon Skull">
+			<mesh id="Dragon Skull">
+				<position x="11" y="1.5" z="32.5" />
+				<rotate x="0" y="2" z="0" />
+				<useColor value="true" />
+				<color r="0.529411793" g="0.505882382" b="0.443137258" a="1" />
+				<scale value="0.5" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/dragon/SM_Env_Bone_Rigcage_01.ply" title="Dragon Rib">
+			<mesh id="Dragon Rib">
+				<position x="4.9000001" y="1.10000002" z="33" />
+				<rotate x="0" y="-1.39999998" z="0" />
+				<useColor value="true" />
+				<color r="0.529411793" g="0.505882382" b="0.443137258" a="1" />
+				<scale value="0.5" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/dragon/SM_Env_Bone_Skull_Jaw_01.ply" title="Dragon Jaw">
+			<mesh id="Dragon Jaw">
+				<position x="12.8999996" y="0.5" z="31.6000004" />
+				<rotate x="0" y="2" z="0" />
+				<useColor value="true" />
+				<color r="0.529411793" g="0.506055415" b="0.441176474" a="1" />
+				<scale value="0.5" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/dragon/SM_Env_Bone_Spine_01.ply" title="Dragon Spine">
+			<mesh id="Dragon Spine">
+				<position x="4.0999999" y="3.0999999" z="33.0999985" />
+				<rotate x="0.200000003" y="8" z="-0.200000003" />
+				<useColor value="true" />
+				<color r="0.529411793" g="0.505882382" b="0.443137258" a="1" />
+				<scale value="0.5" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/dragon/SM_Env_Bone_Tail_01.ply" title="Dragon Tail">
+			<mesh id="Dragon Tail">
+				<position x="-7.5999999" y="-0.100000001" z="33.0999985" />
+				<rotate x="0.300000012" y="-4.69999981" z="0" />
+				<useColor value="true" />
+				<color r="0.529411793" g="0.505882382" b="0.443137258" a="1" />
+				<scale value="0.5" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/objects/SM_Prop_Brazier_01.ply" title="Brazier">
+			<mesh id="Brazier 01">
+				<position x="32.5" y="0.5" z="4.5" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.956862748" g="0.709803939" b="0.313725501" a="1" />
+				<scale value="4" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Brazier 02">
+				<position x="-32.5" y="0.5" z="4.5" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.95588237" g="0.710434496" b="0.313941747" a="1" />
+				<scale value="4" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/objects/SM_Env_Pillar_Square_03.ply" title="Light Pillar">
+			<mesh id="Light Pillar 01">
+				<position x="11.5" y="0.200000003" z="-26.5" />
+				<rotate x="0" y="-0.600000024" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Light Pillar 02">
+				<position x="-11.5" y="0.200000003" z="-26.5" />
+				<rotate x="0" y="0.699999988" z="0" />
+				<useColor value="true" />
+				<color r="0.650980413" g="0.811764717" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/objects/SM_Env_Pillar_Square_01.ply" title="Pillar">
+			<mesh id="Pillar 01">
+				<position x="18.7999992" y="0.5" z="-18.7000008" />
+				<rotate x="0" y="0.5" z="0" />
+				<useColor value="true" />
+				<color r="0.485294104" g="0.485294104" b="0.485294104" a="1" />
+				<scale value="6.0999999" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Pillar 02">
+				<position x="-22.7999992" y="0.5" z="22.7000008" />
+				<rotate x="0" y="-0.899999976" z="0" />
+				<useColor value="true" />
+				<color r="0.486274511" g="0.486274511" b="0.486274511" a="1" />
+				<scale value="6.0999999" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/objects/SM_Env_Pillar_Broken_01.ply" title="Broken Pillar">
+			<mesh id="Broken Pillar 01">
+				<position x="17" y="1.89999998" z="-2.0999999" />
+				<rotate x="0" y="-0.100000001" z="-1.60000002" />
+				<useColor value="true" />
+				<color r="0.486274511" g="0.486274511" b="0.486274511" a="1" />
+				<scale value="6.0999999" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Broken Pillar 02">
+				<position x="-21.1000004" y="0.5" z="-3.5" />
+				<rotate x="0" y="-0.899999976" z="0" />
+				<useColor value="true" />
+				<color r="0.486274511" g="0.486274511" b="0.486274511" a="1" />
+				<scale value="6.0999999" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/objects/SM_Env_Pillar_Broken_Pile_01.ply" title="Broken Pillar Pile">
+			<mesh id="Broken Pillar Pile 01">
+				<position x="19.2999992" y="0.5" z="21.7999992" />
+				<rotate x="0" y="-1.10000002" z="0" />
+				<useColor value="true" />
+				<color r="0.486274511" g="0.486274511" b="0.486274511" a="1" />
+				<scale value="6.0999999" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+			<mesh id="Broken Pillar Pile 02">
+				<position x="-21" y="0.5" z="-17.7999992" />
+				<rotate x="0" y="1.29999995" z="0" />
+				<useColor value="true" />
+				<color r="0.486274511" g="0.486274511" b="0.486274511" a="1" />
+				<scale value="6.0999999" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/objects/SM_Prop_Barrel_02.ply" title="Barrel">
+			<mesh id="Barrel">
+				<position x="-24" y="0" z="55.5" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0.650519013" g="0.812945247" b="0.941176474" a="1" />
+				<scale value="3" />
+				<isWireframe value="false" />
+				<doNotLight value="false" />
+				<visible value="true" />
+			</mesh>
+		</model>
+		<model path="assets/ISO_Shphere.ply" title="Ball">
+			<mesh id="Ball1">
+				<position x="0" y="0" z="0" />
+				<rotate x="0" y="0" z="0" />
+				<useColor value="true" />
+				<color r="0" g="1" b="0" a="1" />
+				<scale value="1" />
+				<isWireframe value="false" />
+				<doNotLight value="true" />
+				<visible value="true" />
+				<boundingBox value="false" />
+			</mesh>
+		</model>
+		<light id="Light 01" onoff="1" showmodel="false">
+			<position x="32.5" y="3.29999995" z="4.5" w="1" />
+			<diffuse x="1" y="0" z="0" w="1" />
+			<specular r="1" g="0.764705896" b="0.764705896" a="1" />
+			<attenuation x="0.100000001" y="0.200000003" z="0.00100000005" w="1" />
+			<direction x="0" y="0" z="0" w="1" />
+			<param1 x="0" y="10" z="20" w="1" />
+			<param2 x="1" y="0" z="0" w="1" />
+		</light>
+		<light id="Light 02" onoff="1" showmodel="false">
+			<position x="-32.5" y="3.29999995" z="4.5" w="1" />
+			<diffuse x="1" y="1" z="0.200980365" w="1" />
+			<specular r="1" g="0.972895026" b="0.769607842" a="1" />
+			<attenuation x="0.00999999978" y="0.5" z="0.100000001" w="1" />
+			<direction x="0" y="0" z="0" w="1" />
+			<param1 x="0" y="10" z="20" w="1" />
+			<param2 x="1" y="0" z="0" w="1" />
+		</light>
+		<light id="Light 03" onoff="1" showmodel="false">
+			<position x="11.5" y="5.30000019" z="-26.5" w="1" />
+			<diffuse x="0.386245668" y="1" z="0.367647052" w="1" />
+			<specular r="0.713379443" g="1" b="0.65196079" a="1" />
+			<attenuation x="0.200000003" y="1" z="9.99999975e-06" w="1" />
+			<direction x="0" y="0" z="0" w="1" />
+			<param1 x="0" y="10" z="20" w="1" />
+			<param2 x="1" y="0" z="0" w="1" />
+		</light>
+		<light id="Light 04" onoff="1" showmodel="false">
+			<position x="-11.5" y="5.30000019" z="-26.5" w="1" />
+			<diffuse x="0.352941155" y="0.352941155" z="1" w="1" />
+			<specular r="0.799307883" g="0.764705896" b="1" a="1" />
+			<attenuation x="1" y="1.5" z="9.99999975e-06" w="1" />
+			<direction x="0" y="0" z="0" w="1" />
+			<param1 x="0" y="10" z="20" w="1" />
+			<param2 x="1" y="0" z="0" w="1" />
+		</light>
+		<light id="Light 05" onoff="1" showmodel="false">
+			<position x="-11.5" y="5.30000019" z="-26.5" w="1" />
+			<diffuse x="0.495098054" y="0.495098054" z="0.495098054" w="1" />
+			<specular r="0.494117647" g="0.494117647" b="0.494117647" a="1" />
+			<attenuation x="1" y="1.5" z="9.99999975e-06" w="1" />
+			<direction x="0" y="-1" z="0" w="1" />
+			<param1 x="2" y="10" z="20" w="1" />
+			<param2 x="1" y="0" z="0" w="1" />
+		</light>
+	</scene>
+</graphicsLibrary>
