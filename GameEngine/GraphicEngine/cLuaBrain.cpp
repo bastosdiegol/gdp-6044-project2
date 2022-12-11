@@ -192,14 +192,17 @@ void cLuaBrain::RunScriptImmediately(std::string script)
 	pGO->m_position.x = (float)lua_tonumber(L, 2);	/* get argument */
 	pGO->m_position.y = (float)lua_tonumber(L, 3);	/* get argument */
 	pGO->m_position.z = (float)lua_tonumber(L, 4);	/* get argument */
-	//pGO->m_position.x = (float)lua_tonumber(L, 5);	/* get argument */
-	//pGO->m_position.y = (float)lua_tonumber(L, 6);	/* get argument */
-	//pGO->m_position.z = (float)lua_tonumber(L, 7);	/* get argument */
+	float vx = (float)lua_tonumber(L, 5);	/* get argument */
+	float vy = (float)lua_tonumber(L, 6);	/* get argument */
+	float vz = (float)lua_tonumber(L, 7);	/* get argument */
+	pGO->m_rotation.x = (float)lua_tonumber(L, 8);
+	pGO->m_rotation.y = (float)lua_tonumber(L, 9);
+	pGO->m_rotation.z = (float)lua_tonumber(L, 10);
 
 
 	lua_pushboolean( L, true );	// index is OK
 	
-	return 1;		// There were 7 things on the stack
+	return 1;		// There were 10 things on the stack
 
 }
 
@@ -232,8 +235,11 @@ void cLuaBrain::RunScriptImmediately(std::string script)
 	lua_pushnumber( L, 0 );
 	lua_pushnumber( L, 0 );
 	lua_pushnumber( L, 0 );
+	lua_pushnumber( L, pGO->m_rotation.x);
+	lua_pushnumber( L, pGO->m_rotation.y);
+	lua_pushnumber( L, pGO->m_rotation.z);
 	
-	return 7;		// There were 7 things on the stack
+	return 10;		// There were 7 things on the stack
 }
 
 /*static*/ 

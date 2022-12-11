@@ -13,7 +13,7 @@
 #endif
 
 #define SOUND_FILE "media_proj_2_sounds.xml"
-#define SMALLEST_DISTANCE 0.5
+#define SMALLEST_DISTANCE 3
 
 extern cProjectManager* g_ProjectManager;
 extern FModManager* g_FModManager;
@@ -85,53 +85,116 @@ void projectStartingUp() {
 	pBrain->RunScriptImmediately(" offsetz = 0.0 ");
 
 	std::string moveScriptFUNCTION =
-		"function moveObject( objectID )\n"							\
+		"function moveObject( objectID )							\n"	\
 		"	isValid, x, y, z, vx, vy, vz = getObjectState(objectID) \n"	\
-		"	if isValid then \n"										\
-		"		x = x + offsetx	\n"						\
-		"		y = y + offsety	\n"						\
-		"		z = z + offsetz	\n"						\
-		"		offsetx = 0.0	\n"						\
-		"		offsety	= 0.0	\n"						\
-		"		offsetz	= 0.0	\n"						\
-		"		setObjectState( objectID , x, y, z, vx, vy, vz )	\n"		\
-		"	end	\n"													\
+		"	if isValid then											\n"	\
+		"		x = x + offsetx										\n"	\
+		"		y = y + offsety										\n"	\
+		"		z = z + offsetz										\n"	\
+		"		offsetx = 0.0										\n"	\
+		"		offsety	= 0.0										\n"	\
+		"		offsetz	= 0.0										\n"	\
+		"		setObjectState( objectID , x, y, z, vx, vy, vz )	\n"	\
+		"	end														\n"	\
 		"end";
 	pBrain->RunScriptImmediately(moveScriptFUNCTION);
 
+	std::string rotateScriptFUNCTION =
+		"function rotateObject( objectID, nrx, nry, nrz )						\n"	\
+		"	isValid, x, y, z, vx, vy, vz, rx, ry, rz = getObjectState(objectID) \n"	\
+		"	if isValid then														\n"	\
+		"		rx = rx + nrx													\n"	\
+		"		ry = ry + nry													\n"	\
+		"		rz = rz + nrz													\n"	\
+		"		setObjectState( objectID , x, y, z, vx, vy, vz, rx, ry, rz )	\n"	\
+		"	end																	\n"	\
+		"end";
+	pBrain->RunScriptImmediately(rotateScriptFUNCTION);
+
+	std::string faceScriptFUNCTION =
+		"function faceObject( objectID, DestinationID )																\n"	\
+		"	isValidObj, xObj, yObj, zObj, vxObj, vyObj, vzObj, xSpin, ySpin, zSpin = getObjectState( objectID )		\n"	\
+		"	isValidDest, xDest, yDest, zDest, vxDest, vyDest, vzDest, rx, ry, rz = getObjectState( DestinationID )	\n"	\
+		"	if isValidObj and isValidDest then																		\n"	\
+		"		xDirection = xDest - xObj																			\n"	\
+		"		yDirection = yDest - yObj																			\n"	\
+		"		zDirection = zDest - zObj																			\n"	\
+		"		rx = rx + xDirection																						\n"	\
+		"		ry = ry + yDirection																						\n"	\
+		"		rz = rz + zDirection																						\n"	\
+		"		setObjectState( objectID , xObj, yObj, zObj, 0.0, 0.0, 0.0, rx, ry, rz )										\n"	\
+		"	end																										\n"	\
+		"end";
+	pBrain->RunScriptImmediately(faceScriptFUNCTION);
+
+	std::string getDirectionScriptFUNCTION =
+		"function getDirection( objectID, DestinationID )					\n"	\
+		"	isValidObj, xObj, yObj, zObj = getObjectState( objectID )		\n"	\
+		"	isValidDest, xDest, yDest = getObjectState( DestinationID )		\n"	\
+		"	if isValidObj and isValidDest then								\n"	\
+		"		xDirection = xDest - xObj									\n"	\
+		"		yDirection = yDest - yObj									\n"	\
+		"		zDirection = zDest - zObj									\n"	\
+		"		return xDirection, yDirection, zDirection					\n"	\
+		"	end																\n"	\
+		"end";
+	pBrain->RunScriptImmediately(getDirectionScriptFUNCTION);
+
 	std::string moveScriptTowardsDestinationFUNCTION =
-		"function moveObjectTowardsDestination( objectID, DestinationID )\n"							\
-		"	isValidObj, xObj, yObj, zObj, vxObj, vyObj, vzObj = getObjectState( objectID ) \n"	\
-		"	isValidDest, xDest, yDest, zDest, vxDest, vyDest, vzDest = getObjectState( DestinationID ) \n"	\
-		"	if isValidObj and isValidDest then \n"										\
-		"		xDirection = xDest - xObj	\n"						\
-		"		yDirection = yDest - yObj	\n"						\
-		"		zDirection = zDest - zObj	\n"						\
-		"		magnitude = (xDirection * xDirection + yDirection * yDirection + zDirection * zDirection)^0.5	\n"						\
-		"		if magnitude > "+ std::to_string(SMALLEST_DISTANCE) + " then	\n"						\
-		"			xStep = xDirection / magnitude / 4	\n"						\
-		"			yStep = yDirection / magnitude / 4	\n"						\
-		"			zStep = zDirection / magnitude / 4	\n"						\
-		"			x = x + xStep	\n"						\
-		"			y = y + yStep	\n"						\
-		"			z = z + zStep	\n"						\
-		"			setObjectState( objectID, x, y, z, vx, vy, vz )	\n"		\
-		"		end		\n"						\
-		"	end	\n"													\
+		"function moveObjectTowardsDestination( objectID, DestinationID )											\n"	\
+		"	isValidObj, xObj, yObj, zObj, vxObj, vyObj, vzObj, xSpin, ySpin, zSpin = getObjectState( objectID )		\n"	\
+		"	isValidDest, xDest, yDest, zDest, vxDest, vyDest, vzDest, rx, ry, rz = getObjectState( DestinationID )	\n"	\
+		"	if isValidObj and isValidDest then																		\n"	\
+		"		xDirection = xDest - xObj																			\n"	\
+		"		yDirection = yDest - yObj																			\n"	\
+		"		zDirection = zDest - zObj																			\n"	\
+		"		magnitude = (xDirection * xDirection + yDirection * yDirection + zDirection * zDirection)^0.5		\n"	\
+		"		if magnitude > "+ std::to_string(SMALLEST_DISTANCE) + " then										\n"	\
+		"			xStep = xDirection / magnitude / 5																\n"	\
+		"			yStep = yDirection / magnitude / 5																\n"	\
+		"			zStep = zDirection / magnitude / 5																\n"	\
+		"			rotateObject ( objectID, 0.0, 0.1, 0.0 )														\n"	\
+		"			x = x + xStep																					\n"	\
+		"			y = y + yStep																					\n"	\
+		"			z = z + zStep																					\n"	\
+		"			setObjectState( objectID, x, y, z, vx, vy, vz, xSpin, ySpin, zSpin )							\n"	\
+		"			return true																						\n"	\
+		"		else																								\n"	\
+		"			return false																					\n"	\
+		"		end																									\n"	\
+		"	end																										\n"	\
 		"end";
 	pBrain->RunScriptImmediately(moveScriptTowardsDestinationFUNCTION);
 
+	//std::string followObjectScriptFUNCTION =
+	//	"function followObject( objectID, objToFollowID, xOffset, yOffset, zOffset )\n"							\
+	//	"	print(\"offsets x y z\", x, y, z) " \
+	//	"	isValidObj, xObj, yObj, zObj, vxObj, vyObj, vzObj = getObjectState( objectID ) \n"	\
+	//	"	isValidFollow, xFollow, yFollow, zFollow, vxFollow, vyFollow, vzFollow = getObjectState( objToFollowID ) \n"	\
+	//	"	if isValidObj and isValidFollow then \n"										\
+	//	"		x =  xFollow + xOffset	\n"						\
+	//	"		y =  yFollow + yOffset	\n"						\
+	//	"		z =  zFollow + zOffset	\n"						\
+	//	"		setObjectState( objectID, x, y, z, vx, vy, vz )	\n"		\
+	//	"	end	\n"													\
+	//	"end";
+	//pBrain->RunScriptImmediately(followObjectScriptFUNCTION);
+
 	std::string followObjectScriptFUNCTION =
-		"function followObject( objectID, objToFollowID, xOffset, yOffset, zOffset )\n"							\
-		"	print(\"offsets x y z\", x, y, z) " \
-		"	isValidObj, xObj, yObj, zObj, vxObj, vyObj, vzObj = getObjectState( objectID ) \n"	\
-		"	isValidFollow, xFollow, yFollow, zFollow, vxFollow, vyFollow, vzFollow = getObjectState( objToFollowID ) \n"	\
-		"	if isValidObj and isValidFollow then \n"										\
-		"		x =  xFollow + xOffset	\n"						\
-		"		y =  yFollow + yOffset	\n"						\
-		"		z =  zFollow + zOffset	\n"						\
-		"		setObjectState( objectID, x, y, z, vx, vy, vz )	\n"		\
-		"	end	\n"													\
+		"function followObject( objectID, objToFollowID, xOffset, yOffset, zOffset )									\n"	\
+		"	print(\"offsets x y z\", x, y, z)																			\n" \
+		"	isValidObj, xObj, yObj, zObj, vxObj, vyObj, vzObj = getObjectState( objectID )								\n"	\
+		"	isValidFollow, xFollow, yFollow, zFollow, vxFollow, vyFollow, vzFollow = getObjectState( objToFollowID )	\n"	\
+		"	if isValidObj and isValidFollow then																		\n" \
+		"		xDirection = xFollow - xObj																				\n"	\
+		"		yDirection = yFollow - yObj																				\n"	\
+		"		zDirection = zFollow - zObj																				\n"	\
+		"		magnitude = (xDirection * xDirection + yDirection * yDirection + zDirection * zDirection) ^ 0.5			\n"	\
+		"																												\n" \
+		"		if magnitude > "+ std::to_string(SMALLEST_DISTANCE) + " then										\n"	\
+		"			flag = moveObjectTowardsDestination( objectID , objToFollowID)										\n" \
+		"		end																										\n"	\
+		"	end																											\n"	\
 		"end";
 	pBrain->RunScriptImmediately(followObjectScriptFUNCTION);
 
@@ -153,7 +216,7 @@ void projectRunning(){
 	cMeshObject* controllableChar = g_ProjectManager->m_selectedScene->m_mMeshes.find("Ball1")->second;
 	
 	// Update will run any Lua script sitting in the "brain"
-	pBrain->Update(1.0);
+	pBrain->Update(0.5);
 
 	cMeshObject* theBall = g_ProjectManager->m_selectedScene->m_mMeshes.find("Ball1")->second;
 	cMeshObject* theTail = g_ProjectManager->m_selectedScene->m_mMeshes.find("Dragon Tail")->second;
@@ -190,6 +253,7 @@ void projectRunning(){
 															   + std::to_string(xOffset) + ", " \
 															   + std::to_string(yOffset) + ", " \
 															   + std::to_string(zOffset) + ")");
+			pBrain->LoadScript("face_green", "faceObject(" + std::to_string(newBall->getID()) + ", " + std::to_string(theBall->getID()) + ")");
 		}
 	}
 
