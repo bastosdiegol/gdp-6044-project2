@@ -60,27 +60,33 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 	}
 	if (key == GLFW_KEY_D)     // Right
 	{
-		if (g_ProjectManager->m_selectedScene->m_name == "The Scene")
-			g_ProjectManager->m_selectedScene->m_mMeshes.find("Ball1")->second->m_position.x -= MOVE_SPEED;
-		else {
+		if (g_ProjectManager->m_selectedScene->m_name == "The Scene") {
+			//g_ProjectManager->m_selectedScene->m_mMeshes.find("Ball1")->second->m_position.x -= MOVE_SPEED;
+			std::string offsetx = "offsetx = " + std::to_string(-MOVE_SPEED);
+			pBrain->RunScriptImmediately(offsetx);
+		} else {
 			g_cameraEye->x -= MOVE_SPEED;
 			g_cameraTarget->x -= MOVE_SPEED;
 		}
 	}
 	if (key == GLFW_KEY_W)     // Forward
 	{
-		if (g_ProjectManager->m_selectedScene->m_name == "The Scene")
-			g_ProjectManager->m_selectedScene->m_mMeshes.find("Ball1")->second->m_position.z += MOVE_SPEED;
-		else {
+		if (g_ProjectManager->m_selectedScene->m_name == "The Scene") {
+			//g_ProjectManager->m_selectedScene->m_mMeshes.find("Ball1")->second->m_position.z += MOVE_SPEED;
+			std::string offsetx = "offsetz = " + std::to_string(MOVE_SPEED);
+			pBrain->RunScriptImmediately(offsetx);
+		} else {
 			g_cameraEye->z += MOVE_SPEED;
 			g_cameraTarget->z += MOVE_SPEED;
 		}
 	}
 	if (key == GLFW_KEY_S)     // Backwards
 	{
-		if (g_ProjectManager->m_selectedScene->m_name == "The Scene")
-			g_ProjectManager->m_selectedScene->m_mMeshes.find("Ball1")->second->m_position.z -= MOVE_SPEED;
-		else {
+		if (g_ProjectManager->m_selectedScene->m_name == "The Scene") {
+			//g_ProjectManager->m_selectedScene->m_mMeshes.find("Ball1")->second->m_position.z -= MOVE_SPEED;
+			std::string offsetx = "offsetz = " + std::to_string(-MOVE_SPEED);
+			pBrain->RunScriptImmediately(offsetx);
+		} else {
 			g_cameraEye->z -= MOVE_SPEED;
 			g_cameraTarget->z -= MOVE_SPEED;
 		}

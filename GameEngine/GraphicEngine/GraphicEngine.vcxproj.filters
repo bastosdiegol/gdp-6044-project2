@@ -222,5 +222,8 @@
     <Xml Include="media_proj_2_sounds.xml">
       <Filter>Resource Files</Filter>
     </Xml>
+    <Xml Include="graphicLibrary.xml">
+      <Filter>Resource Files</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

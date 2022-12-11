@@ -206,6 +206,7 @@
     <None Include="imgui.ini" />
   </ItemGroup>
   <ItemGroup>
+    <Xml Include="graphicLibrary.xml" />
     <Xml Include="media_proj_2_sounds.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
