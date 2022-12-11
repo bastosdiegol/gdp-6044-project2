@@ -120,6 +120,9 @@
     <ClCompile Include="cLuaBrain.cpp">
       <Filter>Source Files\Lua</Filter>
     </ClCompile>
+    <ClCompile Include="LuaScript.cpp">
+      <Filter>Source Files\Lua</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cProjectManager.h">
@@ -198,6 +201,9 @@
       <Filter>Header Files\imgui</Filter>
     </ClInclude>
     <ClInclude Include="cLuaBrain.h">
+      <Filter>Header Files\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaScript.h">
       <Filter>Header Files\Lua</Filter>
     </ClInclude>
   </ItemGroup>

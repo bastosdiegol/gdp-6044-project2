@@ -187,7 +187,7 @@ void cLuaBrain::RunScriptImmediately(std::string script)
 
 	// Object ID is valid
 
-	printf("pGO->m_position.x = %d \n", pGO->m_position.x);
+	//printf("pGO->m_position.x = %d \n", pGO->m_position.x);
 
 	pGO->m_position.x = (float)lua_tonumber(L, 2);	/* get argument */
 	pGO->m_position.y = (float)lua_tonumber(L, 3);	/* get argument */
