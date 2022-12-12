@@ -20,12 +20,14 @@ extern FModManager* g_FModManager;
 extern GLFWwindow* window;
 cLuaBrain* pBrain = new cLuaBrain();
 bool g_isBallDuplicated = false;
+bool g_isBallFollowingCurve = false;
 
 void projectStartingUp();
 void projectNewGame();
 void projectRunning();
 void projectShutdown();
 bool attachSoundToMesh(std::string meshName, std::string soundName);
+void followCurve(cMeshObject* origin, cMeshObject* destination, int dt);
 
 void ProjectGameLoop() {
 	switch (g_ProjectManager->m_GameLoopState) {
@@ -83,6 +85,7 @@ void projectStartingUp() {
 	pBrain->RunScriptImmediately(" offsetx = 0.0 ");
 	pBrain->RunScriptImmediately(" offsety = 0.0 ");
 	pBrain->RunScriptImmediately(" offsetz = 0.0 ");
+	pBrain->RunScriptImmediately(" time = 0.0 ");
 
 	std::string moveScriptFUNCTION =
 		"function moveObject( objectID )							\n"	\
@@ -166,6 +169,31 @@ void projectStartingUp() {
 		"end";
 	pBrain->RunScriptImmediately(moveScriptTowardsDestinationFUNCTION);
 
+	std::string moveScriptTowardsPointFUNCTION =
+		"function moveObjectTowardsPoint( objectID, px, py, pz )													\n"	\
+		"	isValidObj, xObj, yObj, zObj, vxObj, vyObj, vzObj, xSpin, ySpin, zSpin   = getObjectState( objectID )												\n"	\
+		"	if isValidObj then																						\n"	\
+		"		xDirection = px - xObj																				\n"	\
+		"		yDirection = py - yObj																				\n"	\
+		"		zDirection = pz - zObj																				\n"	\
+		"		magnitude = (xDirection * xDirection + yDirection * yDirection + zDirection * zDirection)^0.5		\n"	\
+		"		if magnitude > " + std::to_string(SMALLEST_DISTANCE) + " then										\n"	\
+		"			xStep = xDirection / magnitude / 5																\n"	\
+		"			yStep = yDirection / magnitude / 5																\n"	\
+		"			zStep = zDirection / magnitude / 5																\n"	\
+		"			rotateObject ( objectID, 0.0, 0.1, 0.0 )														\n"	\
+		"			x = x + xStep																					\n"	\
+		"			y = y + yStep																					\n"	\
+		"			z = z + zStep																					\n"	\
+		"			setObjectState( objectID, x, y, z, vx, vy, vz, xSpin, ySpin, zSpin )							\n"	\
+		"			return true																						\n"	\
+		"		else																								\n"	\
+		"			return false																					\n"	\
+		"		end																									\n"	\
+		"	end																										\n"	\
+		"end";
+	pBrain->RunScriptImmediately(moveScriptTowardsPointFUNCTION);
+
 	//std::string followObjectScriptFUNCTION =
 	//	"function followObject( objectID, objToFollowID, xOffset, yOffset, zOffset )\n"							\
 	//	"	print(\"offsets x y z\", x, y, z) " \
@@ -182,7 +210,6 @@ void projectStartingUp() {
 
 	std::string followObjectScriptFUNCTION =
 		"function followObject( objectID, objToFollowID, xOffset, yOffset, zOffset )									\n"	\
-		"	print(\"offsets x y z\", x, y, z)																			\n" \
 		"	isValidObj, xObj, yObj, zObj, vxObj, vyObj, vzObj = getObjectState( objectID )								\n"	\
 		"	isValidFollow, xFollow, yFollow, zFollow, vxFollow, vyFollow, vzFollow = getObjectState( objToFollowID )	\n"	\
 		"	if isValidObj and isValidFollow then																		\n" \
@@ -197,6 +224,36 @@ void projectStartingUp() {
 		"	end																											\n"	\
 		"end";
 	pBrain->RunScriptImmediately(followObjectScriptFUNCTION);
+
+	std::string followCurveScriptTowardsDestinationFUNCTION =
+		"function moveObjectTowardsDestinationCurved( objectID, oriX, oriY, oriZ, DestinationID, controlX, controlY, controlZ, dt )		\n"	\
+		"	isValidObj, xObj, yObj, zObj = getObjectState( objectID )												\n"	\
+		"	isValidDest, xDest, yDest, zDest = getObjectState( DestinationID )										\n"	\
+		"	if isValidObj and isValidDest then																		\n"	\
+		"		print(\"objectID x y z \", objectID, xObj, yObj, zObj)												\n"	\
+		"		print(\"DestinationID x y z \", DestinationID, xDest, yDest, zDest)									\n"	\
+		"		xDirection = xDest - xObj																			\n"	\
+		"		yDirection = yDest - yObj																			\n"	\
+		"		zDirection = zDest - zObj																			\n"	\
+		"		magnitude = (xDirection * xDirection + yDirection * yDirection + zDirection * zDirection) ^ 0.5		\n"	\
+		"		if magnitude > " + std::to_string(SMALLEST_DISTANCE) + " then										\n"	\
+		"			print(\"Time \", time)																			\n" \
+		"			p1x = oriX + (controlX - oriX) * time															\n"	\
+		"			p1y = oriY + (controlY - oriY) * time															\n"	\
+		"			p1z = oriZ + (controlZ - oriZ) * time															\n"	\
+		"			p2x = controlX + (xDest - controlX) * time														\n"	\
+		"			p2y = controlY + (yDest - controlY) * time														\n"	\
+		"			p2z = controlZ + (zDest - controlZ) * time														\n"	\
+		"			x = p1x + (p2x - p1x) * time																	\n"	\
+		"			y = p1y + (p2y - p1y) * time																	\n"	\
+		"			z = p1z + (p2z - p1z) * time																	\n"	\
+		"			setObjectState( objectID, x, y, z)														\n"	\
+		"			print(\"Positions x y z\", x, y, z)																\n" \
+		"			time = time + dt																				\n" \
+		"		end																									\n"	\
+		"	end																										\n"	\
+		"end";
+	pBrain->RunScriptImmediately(followCurveScriptTowardsDestinationFUNCTION);
 
 	// This is like line 102, but is calling the Lua moveObject() funtion instead
 	pBrain->LoadScript("key_callback", "moveObject(" + std::to_string(ballID) + ")");
@@ -220,6 +277,7 @@ void projectRunning(){
 
 	cMeshObject* theBall = g_ProjectManager->m_selectedScene->m_mMeshes.find("Ball1")->second;
 	cMeshObject* theTail = g_ProjectManager->m_selectedScene->m_mMeshes.find("Dragon Tail")->second;
+	cMeshObject* theBrazier = g_ProjectManager->m_selectedScene->m_mMeshes.find("Brazier 01")->second;
 
 	// Checks if the Ball arrived at the Tail
 	if (glm::distance(theBall->m_position, theTail->m_position) < SMALLEST_DISTANCE) {
@@ -254,7 +312,25 @@ void projectRunning(){
 															   + std::to_string(yOffset) + ", " \
 															   + std::to_string(zOffset) + ")");
 			pBrain->LoadScript("face_green", "faceObject(" + std::to_string(newBall->getID()) + ", " + std::to_string(theBall->getID()) + ")");
-		}
+			if (g_isBallFollowingCurve == false) {
+				pBrain->LoadScript("move_towards_curved",
+					"moveObjectTowardsDestinationCurved(" + std::to_string(theBall->getID()) + ", "
+					+ std::to_string(theBall->m_position.x) + ", " \
+					+ std::to_string(theBall->m_position.y) + ", " \
+					+ std::to_string(theBall->m_position.z) + ", " \
+					+ std::to_string(theBrazier->getID()) + ", " \
+					+ std::to_string(-40) + ", " \
+					+ std::to_string(0) + ", " \
+					+ std::to_string(-40) + ", " \
+					+ std::to_string(0.01) + ")");
+				//followCurve(theBall, theBrazier, 1);
+				g_isBallFollowingCurve = true;
+			}
+		}		
+	}
+	if (glm::distance(theBall->m_position, theBrazier->m_position) < SMALLEST_DISTANCE) {
+		// Stops the active moving toward script
+		pBrain->DeleteScript("move_towards_curved");
 	}
 
 	if(controllableChar != nullptr)
@@ -285,4 +361,27 @@ bool attachSoundToMesh(std::string meshName, std::string soundName) {
 	meshObj->attached_sound = pSound->m_channel;
 
 	return true;
+}
+
+inline void followCurve(cMeshObject* movable, cMeshObject* destination, int dt) {
+	glm::vec3 origin = movable->m_position;
+	glm::vec3 point1, point2, control(11, 0, -26);
+	for (float i = 0; i < dt; i+=0.1) {
+		
+		point1.x = origin.x + (control.x - origin.x) * i;
+		point1.y = origin.y + (control.y - origin.y) * i;
+		point1.z = origin.z + (control.z - origin.z) * i;
+
+		point2.x = control.x + (destination->m_position.x - control.x) * i;
+		point2.y = control.y + (destination->m_position.y - control.y) * i;
+		point2.z = control.z + (destination->m_position.z - control.z) * i;
+
+		movable->m_position.x = point1.x + (point2.x - point1.x) * i;
+		movable->m_position.y = point1.y + (point2.y - point1.y) * i;
+		movable->m_position.z = point1.z + (point2.z - point1.z) * i;
+
+		DEBUG_PRINT("DT: %f\n", i);
+		DEBUG_PRINT("Movable x y z: %f %f %f \n\n", movable->m_position.x, movable->m_position.y, movable->m_position.z);
+	}
+	DEBUG_PRINT("Destination x y z: %f %f %f \n\n", destination->m_position.x, destination->m_position.y, destination->m_position.z);
 }
