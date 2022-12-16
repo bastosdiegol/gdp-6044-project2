@@ -13,6 +13,8 @@
 #include "cProjectUI.h"
 #include "cShaderManager.h"
 #include "PhysicsSystem.h"
+#include <FModManager.h>
+#include "SoundUI.h"
 //#include "cLightHelper.h"
 
 // Scene Main Loops, Globals and Functions
@@ -21,13 +23,11 @@
 #ifdef _DEBUG
 #define DEBUG_LOG_ENABLED
 #endif
-#include <FModManager.h>
 #ifdef DEBUG_LOG_ENABLED
 #define DEBUG_PRINT(x, ...) printf(x, __VA_ARGS__)
 #else
 #define DEBUG_PRINT(x)
 #endif
-#include "SoundUI.h"
 
 GLFWwindow* window;
 // Global Camera Eye that will be pointing to the Selected Scene Camera
@@ -215,6 +215,8 @@ int main(int argc, char* argv[]) {
 
 	// Creates pointer to SoundUI
 	SoundUI* soundUI = new SoundUI(g_FModManager);
+
+	g_FModManager->loadDSPs();
 
 	// ImGui Window Color
 	//ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
